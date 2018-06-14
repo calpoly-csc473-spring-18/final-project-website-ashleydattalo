@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<!--[if lt IE 8 ]><html class="no-js ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="no-js ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 8)|!(IE)]><!--><html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+
+   <!--- Basic Page Needs
+   ================================================== -->
+   <meta charset="utf-8">
+   <title>Pov Ray File Generator</title>
+   <meta name="description" content="">
+   <meta name="author" content="">
+
+   <!-- Mobile Specific Metas
+   ================================================== -->
+   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+   <!-- CSS
+    ================================================== -->
+   <link rel="stylesheet" href="css/default.css">
+   <link rel="stylesheet" href="css/layout.css">
+   <link rel="stylesheet" href="css/media-queries.css">
+   <link rel="stylesheet" href="css/magnific-popup.css">
+
+   <!-- Script
+   ================================================== -->
+   <script src="js/modernizr.js"></script>
+
+   <!-- Favicons
+   ================================================== -->
+   <link rel="shortcut icon" href="./images/homeScreen.png" >
+
+</head>
+
+<body>
+
+   <!-- Header
+   ================================================== -->
+   <header id="home">
+
+      <nav id="nav-wrap">
+
+         <a class="mobile-btn" href="#nav-wrap" title="Show navigation">Show navigation</a>
+         <a class="mobile-btn" href="#" title="Hide navigation">Hide navigation</a>
+
+         <ul id="nav" class="nav">
+            <li class="current"><a class="smoothscroll" href="#home">Home</a></li>
+            <li><a class="smoothscroll" href="#about">About</a></li>
+            <li><a class="smoothscroll" href="#howItWorks">How it works</a></li>
+            <li><a class="smoothscroll" href="#implementation">Implementation</a></li>
+            <li><a class="smoothscroll" href="#results">Results</a></li>
+            <li><a class="smoothscroll" href="#futureWork">Future Work</a></li>
+            <li><a class="smoothscroll" href="#solverSource">References</a></li>
+            <li><a class="smoothscroll" href="#images">Images</a></li>
+         </ul> <!-- end #nav -->
+
+      </nav> <!-- end #nav-wrap -->
+
+      <div class="row banner">
+         <div class="banner-text">
+            <h1 class="responsive-headline">Pov Ray File Generator</h1>
+            <h3></h3>
+            <hr />
+         </div>
+      </div>
+
+      <p class="scrolldown">
+         <a class="smoothscroll" href="#about"><i class="icon-down-circle"></i></a>
+      </p>
+
+   </header> <!-- Header End -->
+
+   <!-- trans Section
+   ================================================== -->
+   <section id="trans">
+
+      <div class="row">
+            <div style="width:100%;overflow-x:scroll;white-space: nowrap;">
+               <img src="./images/swirlOrange.png"  width="145" height="115" >
+               <img src="./images/swirlPink.png"  width="145" height="115" >
+               <img src="./images/swirlHotPink.png"  width="145" height="115" >
+               <img src="./images/swirlPinkPurple.png"  width="145" height="115" >
+               <img src="./images/swirlBlue.png"  width="145" height="115" >
+               <img src="./images/swirlPinkBlue.png"  width="145" height="115" >
+               <img src="./images/swirlBluePink.png"  width="145" height="115" >
+            </div>
+
+      </div> <!-- row End -->
+
+   </section> <!-- trans Section End-->
+
+
+   <!-- About Section
+   ================================================== -->
+   <section id="about">
+
+      <div class="row">
+
+         <div class="">
+
+            <h1>About The Project</h1>
+
+            <p>For this project I wrote a program generates Pov Ray Files to be used as input for the 473 Raytracer.
+            </p>
+            <br>
+            <br>
+            <h3>Source Code: <a href="https://github.com/ashleydattalo/2DFluidSolver"><i class="fa fa-github"></i></a>
+               
+
+         </div> <!-- end .main-col -->
+
+      </div>
+
+   </section> <!-- About Section End-->
+
+
+   <!-- trans Section
+   ================================================== -->
+   <section id="trans">
+
+      <div class="row">
+            <div style="width:100%;overflow-x:scroll;white-space: nowrap;">
+               <img src="./images/swirlOrange.png"  width="145" height="115" >
+               <img src="./images/swirlPink.png"  width="145" height="115" >
+               <img src="./images/swirlHotPink.png"  width="145" height="115" >
+               <img src="./images/swirlPinkPurple.png"  width="145" height="115" >
+               <img src="./images/swirlBlue.png"  width="145" height="115" >
+               <img src="./images/swirlPinkBlue.png"  width="145" height="115" >
+               <img src="./images/swirlBluePink.png"  width="145" height="115" >
+            </div>
+
+      </div> <!-- row End -->
+
+   </section> <!-- trans Section End-->
+
+
+     <!-- howItWorks Section
+   ================================================== -->
+   <section id="howItWorks">
+
+      <div class="row">
+
+         <!-- <div class="twelve columns collapsed"> -->
+
+            <h1>How it Works:</h1>
+            <p>The Navier-Stokes equations tell us how a fluid will move over a single time step. First, we split a region of space into a 2D grid. We then create a density field, where each value in the density field represents the amount of fluid present in that grid cell. We also create a velocity field, where each cell contains an x and y component representing the forces acting upon that cell. Each time step, we start with an initial density field and velocity field. We then compute a new velocity field, and new density field. This newly computed density field tells us how much fluid is present in each grid cell.</p>
+
+            <h2>Algorithm:</h2>
+            <p>Every frame we collect user input (for both density and velocity), calculate the velocity field, calculate the density field, and then draw the density.</p>
+
+                  <h3>1. Collect user input</h3> 
+                     <p>Since we want a way to interact with our program, we allow the user to inject density into the grid and add forces to the grid. We allow the user to inject density by pressing the ‘d’ key while dragging the mouse across the screen. Every grid cell the mouse drags over will then receive some density. We also allow the user to add forces into the scene by pressing ‘f’ and dragging the mouse across the screen. The x and y component of the force are computed by the mouse movement. <b>Every single frame</b>, we collect the user input (sometimes there may be none), and store this input in three different arrays: densityInput, velocityXInput, and velocityYInput. These three arrays are then passed into the solver code and used to calculate the final density value.</p>
+
+                  <h3>2. Calculate velocity field</h3>
+                  <p>According to the Navier-Stokes equations, the velocity field is computed via user inputted forces, viscous diffusion, and self-advection. The user-inputted forces are simply received via the user’s input. Viscous diffusion is what makes the simulation look like either water or oil. Self-advection may sound confusing, but simply means that the velocity field moves along itself. The result of this step is a newly computed velocity field.</p>
+
+                  <h3>3. Calculate density field</h3>
+                  <p>According to the Navier-Stokes equations, a density field can be computed from a velocity field, diffusion, and various sources. We receive the velocity field as an input, and use this velocity field to calculate the flow of the fluid. Diffusion simply means that density will spread across the grid cells. This is computed for each cell by calculating a net density: the amount of density present after each cell gains some density from it’s four direct neighbors, and then loses some density to those same four neighbors. The various sources represent any density in the scene that is present before any computations have been made. This initial density can be supplied in two ways: user input or hard coded.</p>
+
+                  <h3>4. Draw Density</h3>
+                  <p>After calculating the new density field, we have an updated density field that represents the amount of fluid present in every single cell in the grid. We then use this density field to update the density values for each cell and draw them.</p>
+
+
+      </div> <!-- row End -->
+
+   </section> <!-- howItWorks Section End-->
+
+
+   <!-- trans Section
+   ================================================== -->
+   <section id="trans">
+
+      <div class="row">
+            <div style="width:100%;overflow-x:scroll;white-space: nowrap;">
+               <img src="./images/swirlOrange.png"  width="145" height="115" >
+               <img src="./images/swirlPink.png"  width="145" height="115" >
+               <img src="./images/swirlHotPink.png"  width="145" height="115" >
+               <img src="./images/swirlPinkPurple.png"  width="145" height="115" >
+               <img src="./images/swirlBlue.png"  width="145" height="115" >
+               <img src="./images/swirlPinkBlue.png"  width="145" height="115" >
+               <img src="./images/swirlBluePink.png"  width="145" height="115" >
+            </div>
+
+      </div> <!-- row End -->
+
+   </section> <!-- trans Section End-->
+
+
+
+   <!-- implementation Section
+   ================================================== -->
+   <section id="implementation">
+
+      <div class="row">
+
+         <!-- <div class="twelve columns collapsed"> -->
+
+            <h1>Implementation:</h1>
+            <p>For my implemenation, the solver computations were performed on the CPU and then the updated density values were passed to GPU every frame. Since my implementation was in 2D, I decided to use the Z component for each vertex to store the density value of the grid that the vertex belonged to. I used indexed based buffering, so the amount of vertices I had was (gridSize + 1)*(gridSize + 1). Then, every frame I updated the Z component of the vertex to the corresponding density value from the density field. I then sent the entire list  of vertices to the shaders to render the scene. Since the vertices are static, I probably could have sent only the density values to the shaders to reduce the amount of data passing from the CPU to the GPU. But as I’ll talk about in the results section, the main bottle neck of the program was not data transfer between the CPU and GPU, but rather the grid size.</p>
+
+            <h3>The computer I used:</h3>
+            <img src="./images/computerInfo.png">
+
+      </div> <!-- row End -->
+
+   </section> <!-- implementation Section End-->
+
+   <!-- trans Section
+   ================================================== -->
+   <section id="trans">
+
+      <div class="row">
+            <div style="width:100%;overflow-x:scroll;white-space: nowrap;">
+               <img src="./images/swirlOrange.png"  width="145" height="115" >
+               <img src="./images/swirlPink.png"  width="145" height="115" >
+               <img src="./images/swirlHotPink.png"  width="145" height="115" >
+               <img src="./images/swirlPinkPurple.png"  width="145" height="115" >
+               <img src="./images/swirlBlue.png"  width="145" height="115" >
+               <img src="./images/swirlPinkBlue.png"  width="145" height="115" >
+               <img src="./images/swirlBluePink.png"  width="145" height="115" >
+            </div>
+
+      </div> <!-- row End -->
+
+   </section> <!-- trans Section End-->
+
+
+   <!-- results Section
+   ================================================== -->
+   <section id="results">
+
+      <div class="row">
+
+         <!-- <div class="twelve columns collapsed"> -->
+
+            <h1>Results:</h1>
+            <p>My main conclusion from this project is that fluid simulations are computationally expensive and there is a tradeoff between accuracy and performance. There are two main factors that influence the performance of the solver: the grid size and the number of iterations over the grid per frame. </p>
+
+            <h2>1. Grid Size:</h2>
+            <p>Grid size affects the performance of your program. The larger your grid size, the slower your program runs. You can see the effects of different grid sizes in the chart and videos below.</p>
+            <div class="CSSTableGenerator">
+               <table>
+                  <tr>
+                     <td>Grid Size</td>
+                     <td>Average Frame Rate</td>
+                  </tr>
+                  <tr>
+                     <td>50 x 50</td>
+                     <td>60 frames per sec</td>
+                  </tr>
+                  <tr>
+                     <td>150 x 150</td>
+                     <td>30 frames per sec</td>
+                  </tr>
+                  <tr>
+                     <td>200 x 200</td>
+                     <td>15 frames per sec</td>
+                  </tr>
+                  <tr>
+                     <td>400 x 400</td>
+                     <td>3 frames per sec</td>
+                  </tr>
+                  <tr>
+                     <td>1000 x 1000</td>
+                     <td><b>3.5 seconds per frame</b></td>
+                  </tr>
+               </table>
+            </div>
+
+            <br><br>
+
+            <p>Lower grid sizes run faster, but have lower resolution. Higher grid sizes have higher resolution, but run much more slowly. You can see in the videos belows the difference in resolution and runtime for each grid size. (For all videos the width of the OpenGl window was 800 pixels, and the height was 600 pixels)
+            <br>Note: I didn't include a video of the 1000x1000 grid size because it was really, really slow.</p>
+            <div id="columns">
+              <div id="content">
+                  <u><b>50 x 50:</u></b>
+              </div>
+              <div id="navbar">
+                  <u><b>150 x 150:</b></u>
+              </div>
+            </div>
+            <div style="width:100%;overflow-x:scroll;white-space: nowrap;">
+               <iframe width="500" height="315" src="https://www.youtube.com/embed/QM16iaN6zsI" frameborder="0" allowfullscreen></iframe>
+               <iframe width="500" height="315" src="https://www.youtube.com/embed/2NAvFvjO1jc" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <div id="columns">
+              <div id="content">
+                  <u><b>200 x 200:</u></b>
+              </div>
+              <div id="navbar">
+                  <u><b>400 x 400:</b></u>
+              </div>
+            </div>
+            <div style="width:100%;overflow-x:scroll;white-space: nowrap;">
+               <iframe width="500" height="315" src="https://www.youtube.com/embed/Yi8xAroZ7zM" frameborder="0" allowfullscreen></iframe>
+               <iframe width="500" height="315" src="https://www.youtube.com/embed/mSiAZOsZbI4" frameborder="0" allowfullscreen></iframe>
+            </div>
+
+            <br><br><br>
+            <h2>2. Grid Iterations Per Frame</h2>
+            <p>Unfortunately, grid iterations are really expensive. In 2D, each grid iteration costs GridSize * GridSize single loop iterations. In 3D, each grid (or cube) iteration costs GridSize * GridSize * GridSize single loop iterations. Below, you can find a chart that shows the number of loop iterations per frame for Stam’s solver in both 2D and 3D. (Note: I am ignoring the set_bnd function which is called X times per frame and includes a loop that goes from 0 to GridSize)</p>
+
+            <div class="CSSTableGenerator">
+               <table>
+                  <tr>
+                     <td>Grid Size</td>
+                     <td>Loop iterations per frame (2D)</td>
+                     <td>Loop iterations per frame (3D)</td>
+                  </tr>
+                  <tr>
+                     <td>50</td>
+                     <td>275,000</td>
+                     <td>13,750,000</td>
+                  </tr>
+                  <tr>
+                     <td>150</td>
+                     <td>2,475,000</td>
+                     <td>371,250,000</td>
+                  </tr>
+                  <tr>
+                     <td>400</td>
+                     <td>17,600,000</td>
+                     <td>7,040,000,000</td>
+                  </tr>
+                  <tr>
+                     <td>1000</td>
+                     <td>110,123,012</td>
+                     <td>112,000,000,000</td>
+                  </tr>
+               </table>
+            </div>
+
+            <br><br>
+            <p>The code for the solver that Stam provided performs 110 iterations over the entire grid every single frame. For each function that the solver calls, I computed the number grid iterations by multiplying the number of times that function was called (per frame) by the number of grid iterations each single call performs.  You can see the results below. </p>
+            <div class="CSSTableGenerator">
+               <table>
+                  <tr>
+                     <td>&nbsp&nbspFunction&nbsp&nbsp</td>
+                     <td># of times called per frame</td>
+                     <td># of grid iterations per fuction call</td>
+                     <td>Total # of grid iterations per frame</td>
+                  </tr>
+                  <tr>
+                     <td>Diffuse()</td>
+                     <td>3</td>
+                     <td>20</td>
+                     <td>60</td>
+                  </tr>
+                  <tr>
+                     <td>Project()</td>
+                     <td>2</td>
+                     <td>22</td>
+                     <td>44</td>
+                  </tr>
+                  <tr>
+                     <td>Add Source()</td>
+                     <td>3</td>
+                     <td>1</td>
+                     <td>3</td>                  
+                  </tr>
+                  <tr>
+                     <td>Advect()</td>
+                     <td>3</td>
+                     <td>1</td>
+                     <td>3</td>
+                  </tr>
+               </table>
+            </div>            
+
+            <br><br>
+            <h2>Performace Improvements</h2>
+            <p>As you can see, multiple grid iterations can get really expensive really fast. One way to improve the speed of the solver (without reducing the grid size), would be to reduce the amount of grid iterations per frame. Recall from above that the functions diffuse and project both perform a high amount of grid iterations per function call. I decided to reduce the amount of grid iterations in each of these functions in order to increase the speed of the solver. In diffuse, I changed the amount of grid iterations from 20 to 2. In project, I changed the number of grid iterations from 22 to 2. Before, diffuse performed 60 grid iteration per frame and project performed 44 grid iterations per frame. But with my changes, diffuse now performs 6 grid iterations per frame, and project performs 4 grid iterations per frame. Overall, the total number of grid iterations dropped from 110 to 16. Below you can find two videos that show the simulation before and after my changes; the one on the left shows before, the one on the right shows after. Both these videos use a grid size of 200 x 200.</p>
+            <div id="container">
+              <div id="content">
+                  <u><b>Before:</u></b>
+                  <br>
+                  Number of Grid Iterations in Diffuse Method: 20 <br>
+                  Number of Grid Iterations in Project Method: 22 <br>
+                  TOTAL Grid Iterations per frame: 110 <br>
+                  Frame Rate: 20 frames/sec
+              </div>
+              <div id="navbar">
+                  <u>After:</u>
+                  <br>
+                  Number of Grid Iterations in Diffuse Method: 2 <br>
+                  Number of Grid Iterations in Project Method: 2 <br>
+                  TOTAL Grid Iterations per frame: 16 <br>
+                  Frame Rate: 60 frames/sec
+              </div>
+            </div>
+
+            <div style="width:100%;overflow-x:scroll;white-space: nowrap;">
+               <iframe width="500" height="315" src="https://www.youtube.com/embed/TVTUonJcGnc" frameborder="0" allowfullscreen></iframe>
+               <iframe width="500" height="315" src="https://www.youtube.com/embed/dOLPjd7y8oE" frameborder="0" allowfullscreen></iframe>
+            </div>
+            <p>As you can see from the videos, there is a tradeoff between visual accuracy and speed. The more realistic (and better looking) you want your simulation to be, the slower it will run. The faster your program runs, the less accurate it will be.</p>
+
+      </div> <!-- row End -->
+
+   </section> <!-- results Section End-->
+
+
+   <!-- trans Section
+   ================================================== -->
+   <section id="trans">
+
+      <div class="row">
+            <div style="width:100%;overflow-x:scroll;white-space: nowrap;">
+               <img src="./images/swirlOrange.png"  width="145" height="115" >
+               <img src="./images/swirlPink.png"  width="145" height="115" >
+               <img src="./images/swirlHotPink.png"  width="145" height="115" >
+               <img src="./images/swirlPinkPurple.png"  width="145" height="115" >
+               <img src="./images/swirlBlue.png"  width="145" height="115" >
+               <img src="./images/swirlPinkBlue.png"  width="145" height="115" >
+               <img src="./images/swirlBluePink.png"  width="145" height="115" >
+            </div>
+
+      </div> <!-- row End -->
+
+   </section> <!-- trans Section End-->
+
+
+  <!-- futureWork Section
+   ================================================== -->
+   <section id="futureWork">
+
+      <div class="row">
+
+         <!-- <div class="twelve columns collapsed"> -->
+
+            <h1>Future Work:</h1>
+               <li>Move the solver’s computations to the GPU</li>
+               <li>Extend the solver into 3D</li>
+               <li>Add multiple densities (ex: water and air interacting with each other)</li>
+               <li>Pre-compute solver values (for large grid sizes)</li>
+
+      </div> <!-- row End -->
+
+   </section> <!-- futureWork Section End-->
+
+      <!-- trans Section
+   ================================================== -->
+   <section id="trans">
+
+      <div class="row">
+            <div style="width:100%;overflow-x:scroll;white-space: nowrap;">
+               <img src="./images/swirlOrange.png"  width="145" height="115" >
+               <img src="./images/swirlPink.png"  width="145" height="115" >
+               <img src="./images/swirlHotPink.png"  width="145" height="115" >
+               <img src="./images/swirlPinkPurple.png"  width="145" height="115" >
+               <img src="./images/swirlBlue.png"  width="145" height="115" >
+               <img src="./images/swirlPinkBlue.png"  width="145" height="115" >
+               <img src="./images/swirlBluePink.png"  width="145" height="115" >
+            </div>
+
+      </div> <!-- row End -->
+
+   </section> <!-- trans Section End-->
+
+  <!-- solverSource Section
+   ================================================== -->
+   <section id="solverSource">
+
+      <div class="row">
+
+         <!-- <div class="twelve columns collapsed"> -->
+
+            <h1>References:</h1>
+            <p>The research paper I used was written by Jos Stam and can be found <a href="http://www.intpowertechcorp.com/GDC03.pdf">here.</a></p>
+
+      </div> <!-- row End -->
+
+   </section> <!-- solverSource Section End-->
+
+
+    <!-- images Section
+   ================================================== -->
+   <section id="images">
+
+      <div class="row">
+
+         <!-- <div class="twelve columns collapsed"> -->
+
+            <h1>Images:</h1>
+            <div style="width:100%;overflow-x:scroll;white-space: nowrap;">
+               <img src="./images/deepOrange.png"  width="200" height="115" >
+               <img src="./images/pastelFire.png"  width="200" height="115" >
+               <img src="./images/pink.png"  width="200" height="115" >
+               <img src="./images/blueAndPink.png"  width="200" height="115" >
+               <img src="./images/darkBlue.png"  width="200" height="115" >
+            </div>
+            <br>
+            <div style="width:100%;overflow-x:scroll;white-space: nowrap;">
+               <img src="./images/swirlOrange.png"  width="145" height="115" >
+               <img src="./images/swirlPink.png"  width="145" height="115" >
+               <img src="./images/swirlHotPink.png"  width="145" height="115" >
+               <img src="./images/swirlPinkPurple.png"  width="145" height="115" >
+               <img src="./images/swirlBlue.png"  width="145" height="115" >
+               <img src="./images/swirlPinkBlue.png"  width="145" height="115" >
+               <img src="./images/swirlBluePink.png"  width="145" height="115" >
+            </div>
+
+      </div> <!-- row End -->
+
+   </section> <!-- images Section End-->
+
+
+
+
+
+   <!-- footer
+   ================================================== -->
+   <footer>
+
+      <div class="row">
+
+         <div class="twelve columns">
+
+            <ul class="copyright">
+               <li>&copy; 2014 CeeVee</li>
+               <li>Design by <a title="Styleshout" href="http://www.styleshout.com/">Styleshout</a></li>
+               <li>Sponsored by <a rel="nofollow" href="http://www.a2hosting.com/?utm___source=styleshoutdemo&utm_medium=__cpm&utm_content=&utm_campaign=">A2Hosting</a></li>
+            </ul>
+
+         </div>
+
+         <div id="go-top"><a class="smoothscroll" title="Back to Top" href="#home"><i class="icon-up-open"></i></a></div>
+
+      </div>
+
+   </footer> <!-- Footer End-->
+
+   <!-- Java Script
+   ================================================== -->
+   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+   <script>window.jQuery || document.write('<script src="js/jquery-1.10.2.min.js"><\/script>')</script>
+   <script type="text/javascript" src="js/jquery-migrate-1.2.1.min.js"></script>
+
+   <script src="js/jquery.flexslider.js"></script>
+   <script src="js/waypoints.js"></script>
+   <script src="js/jquery.fittext.js"></script>
+   <script src="js/magnific-popup.js"></script>
+   <script src="js/init.js"></script>
+
+</body>
+
+</html>
