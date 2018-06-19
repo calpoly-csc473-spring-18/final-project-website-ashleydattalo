@@ -97,10 +97,10 @@
 
             <h1>About The Project</h1>
 
-            <p>For this project I wrote a program generates Pov Ray Files to be used as input for the 473 Raytracer. The primary reason I choose this for my final project was because throughout the quarter I felt restricted when trying to create a cool scene. Here I was writing this awesome raytracer that had the power to generate beautiful images and yet I was limited to using the provided pov files or hard-coding a pov file (which was really tedius). So I wanted to create a tool that I could use to create my own scenes. The images below were all created using my final project. 
+            <p>For this project I wrote a program that generates Pov Ray Files to be used as input for the 473 Raytracer. The primary reason I choose this for my final project was because throughout the quarter I felt restricted when trying to create a cool scene. Here I was writing this awesome raytracer that had the power to generate beautiful images and yet I was limited to using the provided pov files or hard-coding a pov file (which was really tedius). So I wanted to create a tool that I could use to create my own scenes. The images on this website were all created using my final project. 
                <br>
                <br>
-            In the generated images, I focused on two main things: placement of objects and the color of the objects. In many of the images, I used the parametric equation for a helix spiral curve to set the position of an object. I would then change different factors like the radius of the spiral curve or the axis direction the spiral traveled. Also in the images, you'll find different color gradients that the objects follow. This was simply done by interpolating between different colors.
+            In the generated images, I focused on two main things: placement of objects and color of the objects. In many of the images, I used the parametric equation for a helix spiral curve to set the position of an object. I would then change different factors like the radius of the spiral curve or the axis direction the spiral traveled. Also in the images, you'll find different color gradients that the objects follow. This was simply done by interpolating between different colors.
             </p>
 
             <br>
@@ -266,7 +266,7 @@
             <h1>Software Engineering Design:</h1>
          
             <p>
-               For my final project, I wanted to write a Pov Ray File Generator that anyone could use. The first time I wrote the generator code, it was integrated into my 473 Raytracer (it used my Camera, Sphere, Box, LightSouce, and other classes). But since I wanted anyone to use it, I rewrote it so people wouldn't need my raytracer code. The reason I'm mentioning this in the Software Engineering Design scetion, is because as I rewrote the generator I found that there were ways I could simply/refactor my raytracer code.
+               For my final project, I wanted to write a Pov Ray File Generator that anyone could use. The first time I wrote the generator code, it was integrated into my 473 Raytracer (it used my Camera, Sphere, Box, LightSouce, and other classes). But since I wanted anyone to use it, I rewrote it so people wouldn't need my raytracer code. The reason I'm mentioning this in the Software Engineering Design scetion, is because as I rewrote the generator I found that there were ways I could simplify/refactor my raytracer code.
                <br>
                <br>
                For example, in the beginning of the quarter, I made a Color class to store object colors. But I found that as the quarter progressed this was annoying because if I wanted to access an object's color I would have to do this: "object.pigment.color.rgb" (The Pigment class stored one one varaible: Color *color). But when I redesigned the structure for my final project, I deleted the color class entirely, because it was pretty much a useless class. Instead I stored a vec3 inside the Pigment class that would represent the color. And this is a really minor example, but there are a couple other mistakes I made like this at the beginning of the quarter that were slightly annoying to deal with as the quarter progressed. 
